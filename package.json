@@ -12,6 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "MIT",
+  "sideEffects": false,
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "husky": "^4.2.3",
