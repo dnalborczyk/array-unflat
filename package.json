@@ -2,7 +2,7 @@
   "name": "array-unflat",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
     "prepare": "npm run build",
@@ -11,10 +11,32 @@
     "test": "jest",
     "test:cov": "jest --coverage"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Daniel Nalborczyk",
   "license": "MIT",
   "sideEffects": false,
+  "keywords": [
+    "unflat",
+    "unflatten",
+    "array unflat",
+    "array unflatten"
+  ],
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.md",
+    "dist/*"
+  ],
+  "homepage": "https://github.com/dnalborczyk/array-unflat",
+  "bugs": {
+    "url": "https://github.com/dnalborczyk/array-unflat/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dnalborczyk/array-unflat.git"
+  },
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "husky": "^4.2.3",
