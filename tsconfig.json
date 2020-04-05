@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    // specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'.
+    "target": "ES5",
+    // specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
+    "module": "commonjs",
+    // generates corresponding '.d.ts' file.
+    "declaration": true,
+    "outDir": "./dist",
+    // enable all strict type-checking options.
+    "strict": true
+  }
+}
