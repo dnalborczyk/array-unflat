@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "prettier": "prettier --check .",
-    "test": "jest"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "keywords": [],
   "author": "",
