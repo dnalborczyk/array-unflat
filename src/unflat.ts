@@ -5,7 +5,7 @@ function unflat<T>(value: readonly T[], size: 4): [T, T, T, T][]
 function unflat<T>(value: readonly T[], size: 3): [T, T, T][]
 function unflat<T>(value: readonly T[], size: 2): [T, T][]
 function unflat<T>(value: readonly T[], size: 1): [T][]
-function unflat<T>(value: readonly T[], size: number): T[][]
+function unflat<T>(value: readonly T[], size?: number): T[][]
 function unflat<T>(value: readonly T[]): [T, T][]
 
 function unflat<T>(value: readonly T[], size: number = 2): T[][] {
