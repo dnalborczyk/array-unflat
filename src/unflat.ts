@@ -13,7 +13,7 @@ function unflat<T>(value: readonly T[], size = 2): T[][] {
     throw new Error(`unflat value parameter must be an array.`)
   }
 
-  if (size != null && typeof size !== 'number') {
+  if (typeof size !== 'number') {
     throw new Error(`unflat size parameter must be a number.`)
   }
 
