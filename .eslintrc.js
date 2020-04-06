@@ -3,6 +3,8 @@
 module.exports = {
   env: {
     es6: true,
+    // jest globals
+    jest: true,
     // Node.js global variables and Node.js scoping
     // http://eslint.org/docs/user-guide/configuring#specifying-environments
     node: true,
