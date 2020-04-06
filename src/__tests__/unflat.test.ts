@@ -2,9 +2,9 @@ import unflat from '../unflat'
 
 interface Test {
   description: string
-  expected: unknown[]
-  param: unknown[]
-  paramSize?: number
+  expected?: unknown[]
+  param: unknown[] | {}
+  paramSize?: unknown
 }
 
 const tests: Test[] = [
@@ -60,8 +60,39 @@ const tests: Test[] = [
 describe('unflat', () => {
   tests.forEach(({ description, expected, param, paramSize }) => {
     test(`should return ${description}`, () => {
+      // @ts-expect-error
       const result = unflat(param, paramSize)
       expect(result).toEqual(expected)
+    })
+  })
+})
+
+const errorTests: Test[] = [
+  {
+    description: 'should throw exception if value is not an array',
+    param: {},
+  },
+
+  {
+    description: 'should throw exception if size is null',
+    param: [],
+    paramSize: null,
+  },
+
+  {
+    description: 'should throw exception if size is not a number',
+    param: [],
+    paramSize: '6',
+  },
+]
+
+describe('unflat exceptions', () => {
+  errorTests.forEach(({ description, param, paramSize }) => {
+    test(description, () => {
+      expect(
+        // @ts-expect-error
+        () => unflat(param, paramSize),
+      ).toThrowErrorMatchingSnapshot()
     })
   })
 })

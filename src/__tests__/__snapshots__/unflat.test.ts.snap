@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unflat exceptions should throw exception if size is not a number 1`] = `"unflat size parameter must be a number."`;
+
+exports[`unflat exceptions should throw exception if size is null 1`] = `"unflat size parameter must be a number."`;
+
+exports[`unflat exceptions should throw exception if value is not an array 1`] = `"unflat value parameter must be an array."`;
