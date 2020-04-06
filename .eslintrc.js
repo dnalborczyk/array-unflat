@@ -22,4 +22,13 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['eslint-plugin-prettier', '@typescript-eslint'],
+  rules: {
+    'import/extensions': 'off',
+  },
+  settings: {
+    // https://github.com/alexgorbatchev/eslint-import-resolver-typescript
+    'import/resolver': {
+      typescript: {},
+    },
+  },
 }

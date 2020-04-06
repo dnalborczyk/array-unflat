@@ -2,8 +2,8 @@ import unflat from '../unflat'
 
 interface Test {
   description: string
-  expected: any[]
-  param: any[]
+  expected: unknown[]
+  param: unknown[]
   paramSize?: number
 }
 
