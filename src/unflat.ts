@@ -8,7 +8,7 @@ function unflat<T>(value: readonly T[], size: 1): [T][]
 function unflat<T>(value: readonly T[], size?: number): T[][]
 function unflat<T>(value: readonly T[]): [T, T][]
 
-function unflat<T>(value: readonly T[], size: number = 2): T[][] {
+function unflat<T>(value: readonly T[], size = 2): T[][] {
   if (!isArray(value)) {
     throw new Error(`unflat value parameter must be an array.`)
   }
