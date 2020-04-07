@@ -55,6 +55,33 @@ const tests: Test[] = [
     param: [],
     paramSize: 2,
   },
+
+  {
+    description: '',
+    expected: [['a', 1, 'c']],
+    param: ['a', 1, 'c'],
+    paramSize: 3,
+  },
+
+  {
+    description: '',
+    expected: [
+      ['a', 'b', 'c'],
+      ['d', 'e'],
+    ],
+    param: ['a', 'b', 'c', 'd', 'e'],
+    paramSize: 3,
+  },
+
+  {
+    description: '',
+    expected: [
+      ['a', 'b', 'c'],
+      ['d', 'e', 'f'],
+    ],
+    param: ['a', 'b', 'c', 'd', 'e', 'f'],
+    paramSize: 3,
+  },
 ]
 
 describe('unflat', () => {
