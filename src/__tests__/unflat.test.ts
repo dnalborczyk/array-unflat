@@ -7,33 +7,33 @@ interface Test {
   paramSize?: unknown
 }
 
-const tests: Test[] = [
+const testsDefault: Test[] = [
   {
-    description: '',
+    description: 'should work with empty array',
     expected: [],
     param: [],
   },
 
   {
-    description: '',
+    description: 'should work with array with one item',
     expected: [['a']],
     param: ['a'],
   },
 
   {
-    description: '',
+    description: 'should work with array with two items',
     expected: [['a', 1]],
     param: ['a', 1],
   },
 
   {
-    description: '',
+    description: 'should work with array with three items',
     expected: [['a', 1], ['c']],
     param: ['a', 1, 'c'],
   },
 
   {
-    description: '',
+    description: 'should work with array and multiple types',
     expected: [
       ['a', 1],
       [true, {}],
@@ -41,30 +41,42 @@ const tests: Test[] = [
     ],
     param: ['a', 1, true, {}, undefined, null],
   },
+]
 
+describe('unflat with default size value', () => {
+  testsDefault.forEach(({ description, expected, param, paramSize }) => {
+    test(description, () => {
+      // @ts-expect-error
+      const result = unflat(param, paramSize)
+      expect(result).toEqual(expected)
+    })
+  })
+})
+
+const tests: Test[] = [
   {
-    description: '',
+    description: 'should work with empty aray and size 1',
     expected: [],
     param: [],
     paramSize: 1,
   },
 
   {
-    description: '',
+    description: 'should work with empty array and size 2',
     expected: [],
     param: [],
     paramSize: 2,
   },
 
   {
-    description: '',
+    description: 'should work with array with 3 items and size 3',
     expected: [['a', 1, 'c']],
     param: ['a', 1, 'c'],
     paramSize: 3,
   },
 
   {
-    description: '',
+    description: 'should work with array with 5 items and size 3',
     expected: [
       ['a', 'b', 'c'],
       ['d', 'e'],
@@ -74,7 +86,7 @@ const tests: Test[] = [
   },
 
   {
-    description: '',
+    description: 'should work with array with 6 items and size 3',
     expected: [
       ['a', 'b', 'c'],
       ['d', 'e', 'f'],
@@ -82,9 +94,23 @@ const tests: Test[] = [
     param: ['a', 'b', 'c', 'd', 'e', 'f'],
     paramSize: 3,
   },
+
+  {
+    description: 'should work with empty array and size 0',
+    expected: [],
+    param: [],
+    paramSize: 0,
+  },
+
+  {
+    description: 'should work with empty array and size -1',
+    expected: [],
+    param: [],
+    paramSize: -1,
+  },
 ]
 
-describe('unflat', () => {
+describe('unflat with size', () => {
   tests.forEach(({ description, expected, param, paramSize }) => {
     test(`should return ${description}`, () => {
       // @ts-expect-error
